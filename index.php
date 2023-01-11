@@ -18,5 +18,12 @@
         Genera una password sicura
     </h2>
 
+    <form>
+        <label for="lengthPassword">Lunghezza password: </label>
+
+        <input type="text" name="lengthPassword">
+
+        <input type="submit" value="Invia">
+
 </body>
 </html>
