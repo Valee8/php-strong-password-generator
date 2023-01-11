@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <title>Strong Password Generator</title>
 
+    <?php
+        require_once __DIR__ . '/partials/helper.php';
+    ?>
+
 </head>
 <body>
 
@@ -28,22 +32,6 @@
         <br>
 
     <?php
-
-        $lengthPassword = $_GET['lengthPassword'] ?? 0;
-
-        function generatePassword($lengthPassword) {
-            $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?$%^&*()_-+=[]{}:,;@|<>./";
-
-            $lengthCharacters = strlen($characters);
-
-            $password = "";
-
-            for ($i = 0; $i < $lengthPassword; $i++) {
-                $password .= $characters[rand(0, $lengthCharacters - 1)];
-            }
-
-            return $password;
-        }
 
         echo generatePassword($lengthPassword);
     ?>
