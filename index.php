@@ -14,27 +14,31 @@
 </head>
 <body>
 
-    <h1>
-        Strong Password Generator
-    </h1>
+    <div class="container text-center">
+        <h1>
+            Strong Password Generator
+        </h1>
 
-    <h2>
-        Genera una password sicura
-    </h2>
+        <h2>
+            Genera una password sicura
+        </h2>
 
-    <form>
-        <label for="lengthPassword">Lunghezza password: </label>
+        <form>
+            <label for="lengthPassword" class="col-form-label">Lunghezza password: </label>
 
-        <input type="text" name="lengthPassword">
+            <input type="text" name="lengthPassword">
 
-        <input type="submit" value="Invia">
+            <input type="submit" value="Invia" class="btn btn-primary">
+
+        </form>    
 
         <br>
 
-    <?php
+        <?php
 
-        echo generatePassword($lengthPassword);
-    ?>
+            echo generatePassword($lengthPassword);
+        ?>
+    </div>
 
 </body>
 </html>
