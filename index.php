@@ -8,6 +8,9 @@
     <title>Strong Password Generator</title>
 
     <?php
+
+        session_start();
+
         require_once __DIR__ . '/partials/helper.php';
     ?>
 
@@ -36,7 +39,13 @@
 
         <?php
 
-            echo generatePassword($lengthPassword);
+            if ($lengthPassword) {
+                
+                $_SESSION['password'] = generatePassword($lengthPassword);
+
+                header('Location: ./password.php');
+            }
+
         ?>
     </div>
 
