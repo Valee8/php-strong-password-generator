@@ -1,13 +1,31 @@
 <?php
 
-    $lengthPassword = $_GET['lengthPassword'] ?? 0;
+    function generatePassword($lengthPassword, $filterNumbers, $filterUppercaseLetters, $filterLowercaseLetters, $filterSymbols) {
 
-    function generatePassword($lengthPassword) {
-        $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?$%^&*()_-+=[]{}:,;@|<>./";
+        $characters = "";
+        $numbers = "0123456789";
+        $uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+        $symbols = "!?$%^&*()_-+=[]{}:,;@|<>./";
+
+        $password = "";
+
+        if ($filterNumbers) {
+            $characters .= $numbers;
+        }
+
+        if ($filterUppercaseLetters) {
+            $characters .= $uppercaseLetters;
+        }
+        if ($filterLowercaseLetters) {
+            $characters .= $lowercaseLetters;
+        }
+        if ($filterSymbols) {
+            $characters .= $symbols;
+        }
 
         $lengthCharacters = strlen($characters);
 
-        $password = "";
 
         for ($i = 0; $i < $lengthPassword; $i++) {
             $password .= $characters[rand(0, $lengthCharacters - 1)];
