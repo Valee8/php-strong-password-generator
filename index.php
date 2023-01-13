@@ -62,7 +62,7 @@
 
                 <input type="checkbox" name="numbers">
 
-                <label for="numbers">Numbers </label>
+                <label for="numbers">Numeri </label>
 
                 <br>
 
